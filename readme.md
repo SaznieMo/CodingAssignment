@@ -16,7 +16,9 @@ Build & Run INSTRUCTIONS:
 - Download source code.
 - Navigate to root folder containing ./src
 - On the Command Line, execute the following cmd:
-mvn clean test exec:java "path/to/logfile.txt"
+mvn clean test exec:java -Dexec.args="path/to/logfile.txt"
+- E.G: mvn clean test exec:java -Dexec.args="/Users/saznie/Downloads/logfile.txt"
+
 
 Improvements to be made for Production Environments:
 - Multithreading - Implement Runnable() threads for application to be called asynchronously on multiple files.

@@ -29,19 +29,24 @@ public class Driver {
 
         logger.debug("Path to input log file:" + logFile.getPathToLogFile());
 
-        logFile.parseLogFile();
+        try {
+            logFile.parseLogFile();
 
-        // For each entry in the map, execute an INSERT SQL statement to create the rows as specified in the task.
-        logFile.getLogTableEntryMap().forEach((k,v) -> jdbcUtils.executeQuery("INSERT INTO LogsWithDurationsTable VALUES ('" + v.getId() + "','" + v.getEventDuration() + "','" + v.getType() + "','" + v.getHost() + "',"  + v.isAlert() + ")"));
+            // For each entry in the map, execute an INSERT SQL statement to create the rows as specified in the task.
+            logFile.getLogTableEntryMap().forEach((k, v) -> jdbcUtils.executeQuery("INSERT INTO LogsWithDurationsTable VALUES ('" + v.getId() + "','" + v.getEventDuration() + "','" + v.getType() + "','" + v.getHost() + "'," + v.isAlert() + ")"));
 
-        // Output of final table.
-        ResultSet result = jdbcUtils.executeQuery("SELECT * from LogsWithDurationsTable");
-        while (result.next()){
-            logger.info(result.getString("EventID") + " | " +
-                    result.getString("EventDuration") + " | " +
-                    result.getString("Type") + " | " +
-                    result.getString("Host") + " | " +
-                    result.getString("Alert"));
+            // Output of final table.
+            ResultSet result = jdbcUtils.executeQuery("SELECT * from LogsWithDurationsTable");
+            while (result.next()) {
+                logger.info(result.getString("EventID") + " | " +
+                        result.getString("EventDuration") + " | " +
+                        result.getString("Type") + " | " +
+                        result.getString("Host") + " | " +
+                        result.getString("Alert"));
+            }
+
+        } catch (Exception e) {
+            logger.error(e.getMessage());
         }
 
     }

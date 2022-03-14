@@ -1,6 +1,0 @@
-/*C1*/SET SCHEMA SYSTEM_LOBS
-INSERT INTO BLOCKS VALUES(0,2147483647,0)
-COMMIT
-/*C2*/SET SCHEMA PUBLIC
-CREATE TABLE LogsWithDurationsTable (\u000a    EventID varchar (255),\u000a    EventDuration int, \u000a    Type varchar(255), \u000a    Host varchar(255), \u000a    Alert Boolean\u000a)
-DISCONNECT
