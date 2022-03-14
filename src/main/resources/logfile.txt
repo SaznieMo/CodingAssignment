@@ -1,0 +1,8 @@
+{"id":"aaa", "state":"STARTED", "type":"APPLICATION_LOG", "host":"12345", "timestamp":14912345}
+{"id":"aaa", "state":"FINISHED", "type":"APPLICATION_LOG", "host":"12345", "timestamp":14912349}
+{"id":"bbb", "state":"STARTED", "timestamp":14912345}
+{"id":"ccc", "state":"FINISHED", "type":"APPLICATION_LOG", "host":"12345", "timestamp":14912345}
+{"id":"bbb", "state":"FINISHED", "timestamp":14912345}
+{"id":"ccc", "state":"STARTED", "type":"APPLICATION_LOG", "host":"12345", "timestamp":14912340}
+{"id":"ddd", "state":"STARTED", "timestamp":14912345}
+{"id":"ddd", "state":"FINISHED", "timestamp":14912348}
